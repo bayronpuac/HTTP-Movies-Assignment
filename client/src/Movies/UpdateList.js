@@ -31,7 +31,7 @@ class UpdateMovieForm extends React.Component {
 
   updateMovie = e => {
     e.preventDefault();
-    const movie = this.props.match.params.id; //Grabs the id dynamically
+    const movie = this.props.match.params.id;
     axios
       .put(`http://localhost:5000/api/movies/${movie}`, this.state.updateMovie)
       .then(res => {
@@ -46,23 +46,23 @@ class UpdateMovieForm extends React.Component {
   render() {
     return (
       <div className="movie-form">
-        <h2>PUT (update) a movie</h2>
+        <h2>Update Movie</h2>
         <form onSubmit={this.updateMovie}>
-          <input
+          Name: <input
             type="text"
             name="title"
             placeholder="Title"
             onChange={this.handleChange}
             value={this.state.updateMovie.title}
           />
-          <input
+          Director: <input
             type="text"
             name="director"
             placeholder="Director"
             onChange={this.handleChange}
             value={this.state.updateMovie.director}
           />
-          <input
+          Metascore: <input
             type="text"
             name="metascore"
             placeholder="Meta Score"
@@ -70,7 +70,7 @@ class UpdateMovieForm extends React.Component {
             value={this.state.updateMovie.metascore}
           />
 
-          <input
+         Stars: <input
             type="text"
             name="stars"
             placeholder="Stars"
